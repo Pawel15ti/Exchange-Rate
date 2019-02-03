@@ -1,0 +1,5 @@
+<root>
+    <item name='org.springframework.core.ParameterizedTypeReference'>
+        <annotation name='java.lang.Deprecated'/>
+    </item>
+</root>
