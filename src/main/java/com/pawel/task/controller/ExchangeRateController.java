@@ -9,16 +9,19 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
 import java.math.BigDecimal;
-import java.util.Optional;
 
 @RestController
 @Slf4j
 public class ExchangeRateController {
 
-    @Autowired
+    final
     ExchangeRateService exchangeRateService;
+
+    @Autowired
+    public ExchangeRateController(ExchangeRateService exchangeRateService) {
+        this.exchangeRateService = exchangeRateService;
+    }
 
     @RequestMapping(
             path = "/exchange/rate/{amount}/{currency}/{tcurrency}",
